@@ -16,7 +16,7 @@ Feature: US_Mqa_31
     And hover over and verify arrow's color changed
     Then click on arrow
     Then verify Tüm Sektörlere Hitap Eden Çözümler is displayed
-#demene 6464
+#demene 646465544857
 
 
 
