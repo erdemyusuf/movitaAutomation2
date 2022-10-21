@@ -7,8 +7,11 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        dryRun = false,
-        tags="@parametre"
+        plugin={"html:target//Pcucumber-reports2.html",
+                "json:target/json-reports/Pcucumber2.json",
+                "junit:target/xml-report/Pcucumber2.xml"},
+        tags="@mqa_31",
+        dryRun = false
 
 
 
