@@ -2,7 +2,7 @@
 
 Feature: US_Mqa_6_2
 
-  Scenario: User clickability, color change and strings
+  Scenario: user clickability color change and strings
     Given user navigates to "movita"page
 
     Then user hovers over rota_optimizasyon and verifies color change
@@ -28,3 +28,4 @@ Feature: US_Mqa_6_2
     Then user hovers over giris and verifies color change
     Then user verifies giris clickable
     Then verify giris string
+
