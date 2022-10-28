@@ -112,5 +112,35 @@ public class MovitaPage {
     @FindBy(xpath = "//*[@id=\"content\"]/div/div[7]/div[3]/div/a")
     public WebElement ekibimiz_devamoku;
 
+    @FindBy (xpath = "//div[text()='GİRİŞ Yap']")
+    public WebElement girisYap;
+
+    @FindBy (id = "username")
+    public WebElement username;
+
+    @FindBy (xpath = "//*[@id='password']")
+    public WebElement password;
+
+    @FindBy (xpath = "//*[@alt='branding logo']")
+    public WebElement logo;
+
+    @FindBy (xpath = "//h6/span")
+    public WebElement logoAltiYazi;
+
+    @FindBy (xpath = "//button[@type='submit']")
+    public WebElement girisyapYazisi;
+
+    @FindBy (xpath = "//*[@class='card-link']")
+    public WebElement forgetPassword;
+
+    @FindBy (linkText = "//*[@class='card-link']")
+    public WebElement forgetPasswordClick;
+
+    @FindBy (xpath = "//*[@class='nav-link mr-2 nav-link-label']")
+    public WebElement anasayfayaDon;
+
+    @FindBy (xpath = "//*[@class='clearfix blue-grey lighten-2 text-sm-center mb-0 px-1']")
+    public WebElement footer;
+
 
 }
