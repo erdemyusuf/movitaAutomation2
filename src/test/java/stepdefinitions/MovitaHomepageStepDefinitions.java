@@ -512,4 +512,85 @@ public class MovitaHomepageStepDefinitions {
         }
 
 }
+
+    @Given("Kullanici {string} anasayfasina gider")
+    public void kullaniciAnasayfasinaGider(String movita) {
+        Driver.getDriver().get(ConfigurationReader.getProperty("movita"));
+
+    }
+
+    @When("anasayfada {string} butonuna tiklar")
+    public void anasayfadaButonunaTiklar(String girisYap) {
+        movita.girisYap.click();
+    }
+
+    @And("kullanici adi ve sifre  alanlarini gorur")
+    public void kullanıcıAdiVeSifreAlanlariniGorur() {
+        Assert.assertTrue(movita.username.isDisplayed());
+        Assert.assertTrue(movita.password.isDisplayed());
+    }
+
+    @And("Movita Vasita Izleme Takip Sistemi yazisini ve onun uzerinde  Movita logosunu gorur")
+    public void movitaVasitaIzlemeTakipSistemiYazisiniVeOnunUzerindeMovitaLogosunuGorur() {
+        Assert.assertTrue(movita.logo.isDisplayed());
+        Assert.assertTrue(movita.logoAltiYazi.isDisplayed());
+    }
+
+    @And("Mavi renk uzerinde Giris Yap butonu oldugunu gorur")
+    public void maviRenkUzerindeGirisYapButonuOldugunuGorur() {
+        Assert.assertTrue(movita.girisyapYazisi.isDisplayed());
+
+    }
+
+    @And("Giris Yap butonunun uzerinde Sifrenizi mi Unuttunuz? linkini gorur")
+    public void girisYapButonununUzerindeSifreniziMiUnuttunuzLinkiniGorur() {
+        Assert.assertTrue(movita.forgetPassword.isDisplayed());
+
+    }
+
+
+
+    @Then("Anasayfaya Don yazisini ve ← ikonunu gorur")
+    public void anasayfayaDonYazisiniVeIkonunuGorur() {
+        ReusableMethods.waitForVisibility(movita.anasayfayaDon, 5);
+        Assert.assertTrue(movita.anasayfayaDon.isDisplayed());
+
+
+    }
+
+    @And("ikona \\(←) tikladigi zaman anasayfaya yonlendirilir")
+    public void ikonaTikladigiZamanAnasayfayaYonlendirilir() {
+        movita.anasayfayaDon.click();
+
+    }
+
+    @And("footer kismindaki yaziyi gorur")
+    public void footerKismindakiYaziyiGorur() {
+        Assert.assertTrue(movita.footer.isDisplayed());
+
+    }
+
+    @And("{string} kismina hover over yapinca yazinin renginin maviden yesile dondugunu gorur")
+    public void kisminaHoverOverYapincaYazininRengininMavidenYesileDondugunuGorur(String renkDegisimi)  {
+        String color_before= movita.forgetPassword.getCssValue("color");
+        String color_b_hex=Color.fromString(color_before).asHex();
+
+        ReusableMethods.hover(movita.forgetPassword);
+        ReusableMethods.waitForVisibility(movita.forgetPassword,3);
+
+        String color_after=movita.forgetPassword.getCssValue("color");
+        String color_a_hex=Color.fromString(color_after).asHex();
+
+        Assert.assertFalse(Objects.equals(color_a_hex, color_b_hex));
+
+
+    }
+
+    @And("{string} kisminin clickable oldugunu gorur")
+    public void kismininClickableOldugunuGorur(String clickable) throws InterruptedException {
+
+        ExpectedConditions.elementToBeClickable(movita.forgetPassword);
+    }
+
+
 }
