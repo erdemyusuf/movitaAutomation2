@@ -1,6 +1,5 @@
 Feature: US_MQA-49 Login sayfasi gorunumu
 
- @login
   Scenario: TC_MQA-59 Kullanici login sayfasini goruntuler
 
    Given  Kullanici "movita" anasayfasina gider
