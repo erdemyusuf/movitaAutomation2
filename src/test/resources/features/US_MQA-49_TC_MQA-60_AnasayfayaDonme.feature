@@ -1,6 +1,5 @@
 Feature: US_MQA-49 LOgin sayfasi gorunumu
 
-  @geridon
   Scenario: TC_MQA-60 Anasayfaya donebilme
 
      Given Kullanici "movita" anasayfasina gider
