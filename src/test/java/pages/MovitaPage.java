@@ -142,5 +142,23 @@ public class MovitaPage {
     @FindBy (xpath = "//*[@class='clearfix blue-grey lighten-2 text-sm-center mb-0 px-1']")
     public WebElement footer;
 
+    @org.openqa.selenium.support.FindBy(xpath = "/html/body/div[2]/div/div[2]/div/form/fieldset[3]/div/a")
+    public org.openqa.selenium.WebElement sifrenizi_unuttunuzmu;
+    @org.openqa.selenium.support.FindBy(xpath = "/html/body/div[2]/div/div[1]/div/img")
+    public org.openqa.selenium.WebElement movita_logo;
+    @org.openqa.selenium.support.FindBy(xpath = "/html/body/div[2]/div/div[1]/h6/span")
+    public org.openqa.selenium.WebElement SifreYenileme;
+    @org.openqa.selenium.support.FindBy(xpath = "//*[@id=\"username\"]")
+    public org.openqa.selenium.WebElement kullanıcıAdı;
+    @org.openqa.selenium.support.FindBy(xpath = "//*[@id=\"telefon\"]")
+    public org.openqa.selenium.WebElement telefon;
+    @org.openqa.selenium.support.FindBy(xpath = "/html/body/div[2]/div/div[2]/div/form/fieldset[3]/div/a")
+    public org.openqa.selenium.WebElement giris_ekranı;
+    @org.openqa.selenium.support.FindBy(xpath = "/html/body/div[2]/div/div[2]/div/form/button")
+    public org.openqa.selenium.WebElement sifre_degistir;
+    @org.openqa.selenium.support.FindBy(xpath = "/html/body/footer[2]")
+    public org.openqa.selenium.WebElement foother;
+    @org.openqa.selenium.support.FindBy(xpath = "//*[@id=\"navbar-mobile\"]/ul/li/a")
+    public org.openqa.selenium.WebElement ana_sayfaya_dön;
 
 }
