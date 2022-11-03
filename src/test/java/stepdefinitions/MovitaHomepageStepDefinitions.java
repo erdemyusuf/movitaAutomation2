@@ -37,7 +37,7 @@ public class MovitaHomepageStepDefinitions {
 
     @Then("User should navigate to homepage")
     public void user_should_navigate_to_homepage() {
-        String expectedUrl = "https://movita.com.tr/";
+        String expectedUrl = "https://movita.com.tr:9045/";
         String actualUrl = Driver.getDriver().getCurrentUrl();
         Assert.assertEquals("Urls are not matched.User can't navigate to homepage", expectedUrl, actualUrl);
     }
@@ -593,4 +593,88 @@ public class MovitaHomepageStepDefinitions {
     }
 
 
+//////// Login sayfasındaki ‘Şifrenizi mi Unuttunuz?’ sayfasının görünümü ve işlevselliği//////
+    //////ENGİN AKGÜL////
+@Then("giris yap tıkla")
+public void giris_yap_tıkla() {
+    ReusableMethods.clickWithTimeOut(movita.giris,10000);
+}
+
+    @Then("sifrenizi mi unuttunuz mu tıkla")
+    public void sifreniziMiUnuttunuzMuTıkla() {
+
+        ReusableMethods.clickWithTimeOut(movita.sifrenizi_unuttunuzmu,30000);
+
+    }
+
+    @Then("logo dogrulama")
+    public void logo_dogrulama() {
+        Assert.assertTrue(movita.movita_logo.isDisplayed());
+
+    }
+
+    @Then("sifre yenileme text dogrulama")
+    public void sifre_yenileme_text_dogrulama() {
+        String aranan = "Movita Şifre Yenileme";
+        String sonuc = movita.SifreYenileme.getText();
+        Assert.assertTrue(aranan.contains(sonuc));
+        System.out.println("Yenileme başlığı = " + aranan);
+    }
+
+    @Then("kullanıcı adı giris alanı")
+    public void kullanıcı_adı_giris_alanı() {
+        String aranan = "Kullanıcı Adı Girişi Alanı";
+        String sonuc = movita.kullanıcıAdı.getText();
+        Assert.assertTrue(aranan.contains(sonuc));
+        System.out.println("Kullanıcı Alanı = " + aranan);
+
+    }
+
+    @Then("telefon giris alanı")
+    public void telefon_giris_alanı() throws InterruptedException {
+        String aranan = "Telefon Girişi Alanı";
+        String sonuc = movita.telefon.getText();
+        Assert.assertTrue(aranan.contains(sonuc));
+        System.out.println("Telefon Alanı = " + aranan);
+        Thread.sleep(3000);
+
+    }
+
+    @Then("sifre degistir buttonu")
+    public void sifre_degistir_buttonu() throws InterruptedException {
+        String aranan = "Şifre Değiştir butonu";
+        String sonuc = movita.sifre_degistir.getText();
+        Assert.assertTrue(aranan.contains(sonuc));
+        System.out.println("şifre değiştir buttonu = " + aranan);
+        Thread.sleep(3000);
+    }
+
+    @Then("foother dogrulama")
+    public void foother_dogrulama() throws InterruptedException {
+        String aranan = "Copyright © 2017 Movita , Bütün Hakları Saklıdır.";
+        String sonuc = movita.foother.getText();
+        Assert.assertTrue(aranan.contains(sonuc));
+        System.out.println("foother sonucu = " + aranan);
+        Thread.sleep(5000);
+
+
+    }
+
+    @And("giris ekranı  hover over ve tıkla")
+    public void girisEkranıHoverOverVeTıkla() {
+        String color_before= movita.giris_ekranı.getCssValue("color");
+        String color_b_hex=Color.fromString(color_before).asHex();
+        ReusableMethods.hover(movita.giris_ekranı);
+        String color_after=movita.giris_ekranı.getCssValue("color");
+        String color_a_hex=Color.fromString(color_after).asHex();
+        Assert.assertFalse(Objects.equals(color_a_hex, color_b_hex));
+        ReusableMethods.clickWithTimeOut(movita.giris_ekranı,10000);
+
+    }
+
+    @Then("ana sayfaya dön")
+    public void ana_sayfaya_dön() {
+        ReusableMethods.clickWithTimeOut(movita.ana_sayfaya_dön,30000);
+
+    }
 }
