@@ -160,5 +160,62 @@ public class MovitaPage {
     public org.openqa.selenium.WebElement foother;
     @org.openqa.selenium.support.FindBy(xpath = "//*[@id=\"navbar-mobile\"]/ul/li/a")
     public org.openqa.selenium.WebElement ana_sayfaya_dön;
+    //mqa 32
+    @FindBy(xpath = "//h5[text()=\"Satır Kod\"]")
+    public WebElement satirKod900K;
 
+    @FindBy(xpath = "//h5[text()=\"Memnun Müşteri\"]")
+    public WebElement memnunMusteri1500;
+
+    @FindBy(xpath = "//h5[text()=\"Çözümler\"]")
+    public WebElement cozumler20;
+
+    @FindBy(xpath = "//h5[text()=\"5 Yıllık Deneyim\"]")
+    public WebElement yillikDeneyim5;
+
+    @FindBy(xpath = "//h2[text()=\"movita mobil vasıta izleme takip sistemi\"]")
+    public WebElement mobilMovitaText;
+
+
+    @FindBy(xpath = "//div[text()=\"Tüm Sektörlere Hitap Eden Çözümler\"]")
+    public WebElement hitapedencozümler;
+
+    //MQA-33
+    @FindBy(xpath= "//*[@id=\"portfolio\"]/article[1]/div/div[1]/a")
+    public WebElement taksi_ve_ozel_araclar;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[2]/div/div[1]/a")
+    public WebElement minibus_ve_midibus;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[3]/div/div[1]/a")
+    public WebElement sehirlerarasi_otobusler;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[4]/div/div[1]/a")
+    public WebElement zirhli_tasima_araclari;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[5]/div/div[1]/a")
+    public WebElement okul_servisleri;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[8]/div/div[1]/a")
+    public WebElement belediye_ve_halkotobusu;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[7]/div/div[1]/a")
+    public WebElement yuk_ve_esya_tasiyan_araclar;
+    @FindBy(xpath = "//*[@id=\"portfolio\"]/article[6]/div/div[1]/a")
+    public WebElement guvenlik_kuvvetleri_araclari;
+
+    @FindBy(xpath = "//*[@id='content']/div/a")
+    public WebElement cozumlerbutton;
+    @FindBy(xpath = "//*[@id='content']/div/a")
+    public WebElement cozumlerbutton_sonuc;
+
+
+    @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+    public WebElement kisi_bilgilendirme_tiklama;
+    @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+    public WebElement kisi_nesne_hayvan_takip_sistemi_tiklama;
+
+    @FindBy(xpath = "//*[@id=\"content\"]/div/a")
+    public WebElement yediden_yetmise;
+    @FindBy(xpath = "//*[@id=\"content\"]/div/a/div/strong")
+    public WebElement yediden_yetmise_clk;
+    @FindBy(xpath = "//*[@id=\"page-title\"]/div/h1")
+    public WebElement yediden_yetmise_string;
+
+    @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[1]/a/div")
+    public WebElement anasayfa;
 }
