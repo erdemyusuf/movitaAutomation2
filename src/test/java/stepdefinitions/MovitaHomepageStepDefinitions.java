@@ -677,4 +677,117 @@ public void giris_yap_tıkla() {
         ReusableMethods.clickWithTimeOut(movita.ana_sayfaya_dön,30000);
 
     }
+    @When("kullanici sayfayi asagi indirir ve dorduncu sectionda durur")
+    public void kullanici_sayfayi_asagi_indirir_ve_dorduncu_sectionda_durur() throws InterruptedException {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .perform();
+        Thread.sleep(5000);
+
+    }
+
+    @Then("kullanici verilen String ve sayisal verileri dogrular")
+    public void kullanici_verilen_string_ve_sayisal_verileri_dogrular() {
+
+        System.out.println(movita.satirKod900K.getText());
+        System.out.println(movita.memnunMusteri1500.getText());
+        System.out.println(movita.yillikDeneyim5.getText());
+        System.out.println(movita.cozumler20.getText());
+        System.out.println(movita.mobilMovitaText.getText());
+
+
+    }
+
+    @Then("kullanici arrow sign üzerinde hoverover yapar")
+    public void kullanici_arrow_sign_üzerinde_hoverover_yapar() {
+        ReusableMethods.clickWithTimeOut(movita.arrow, 300);
+    }
+
+    @Then("kullanici arrow sign üzerinde renk degisikligini dogrular")
+    public void kullanici_arrow_sign_üzerinde_renk_degisikligini_dogrular() {
+        String color_before = movita.arrow.getCssValue("background-color");
+        String color_b_hex = Color.fromString(color_before).asHex();
+
+        ReusableMethods.hover(movita.arrow);
+        ReusableMethods.waitForVisibility(movita.arrow, 500);
+
+        String color_after = movita.arrow.getCssValue("background-color");
+        String color_a_hex = Color.fromString(color_after).asHex();
+        Assert.assertNotEquals(color_a_hex, color_b_hex);
+    }
+
+    @Then("kullanici arrow sign tiklar")
+    public void kullanici_arrow_sign_tiklar() {
+        movita.arrow.click();
+    }
+
+    @Then("kullanici arrow sign tiklayinca verilen stringi dogrular")
+    public void kullanici_arrow_sign_tiklayinca_verilen_stringi_dogrular() {
+        ReusableMethods.waitForVisibility(movita.hitapedencozümler, 100);
+        Assert.assertTrue("Tüm Sektörlere Hitap Eden Çözümler", movita.hitapedencozümler.isDisplayed());
+
+    }
+
+    //MQA -33
+
+    @When("kullanici sayfayi asagi indirir ve besinci sectionda durur")
+    public void kullanici_sayfayi_asagi_indirir_ve_besinci_sectionda_durur() throws InterruptedException {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .sendKeys(Keys.PAGE_DOWN)
+                .perform();
+        Thread.sleep(2000);
+    }
+
+    @Then("kullanici cozumler kisminda bulunan sekiz bolume hover over yapar ve strigleri verify eder")
+    public void kullanici_cozumler_kisminda_bulunan_sekiz_bolume_hover_over_yapar_ve_strigleri_verify_eder() {
+
+
+        Assert.assertTrue(movita.taksi_ve_ozel_araclar.isDisplayed());
+        Assert.assertTrue(movita.minibus_ve_midibus.isDisplayed());
+        Assert.assertTrue(movita.sehirlerarasi_otobusler.isDisplayed());
+        Assert.assertTrue(movita.zirhli_tasima_araclari.isDisplayed());
+        Assert.assertTrue(movita.okul_servisleri.isDisplayed());
+        Assert.assertTrue(movita.belediye_ve_halkotobusu.isDisplayed());
+        Assert.assertTrue(movita.yuk_ve_esya_tasiyan_araclar.isDisplayed());
+        Assert.assertTrue(movita.guvenlik_kuvvetleri_araclari.isDisplayed());
+    }
+
+
+    @Then("kullanici {string} uzerine hover over yapar arkaplan renk degisimini verify eder")
+    public void kullanici_uzerine_hover_over_yapar_arkaplan_renk_degisimini_verify_eder(String string) {
+        String color_before = movita.yediden_yetmise.getCssValue("background-color");
+        String color_b_hex = Color.fromString(color_before).asHex();
+
+        ReusableMethods.hover(movita.yediden_yetmise);
+        ReusableMethods.waitForVisibility(movita.yediden_yetmise, 500);
+
+        String color_after = movita.yediden_yetmise.getCssValue("background-color");
+        String color_a_hex = Color.fromString(color_after).asHex();
+        Assert.assertNotEquals(color_a_hex, color_b_hex);
+    }
+
+    @Then("kullanici {string} yazini click eder {string} stringini verify eder")
+    public void kullanici_yazini_click_eder_stringini_verify_eder(String string, String string2) {
+        movita.yediden_yetmise_clk.click();
+        Assert.assertTrue(movita.yediden_yetmise_string.isDisplayed());
+        movita.anasayfa.click();
+
+    }
+    @Given("kullanici movita sayfasına gider")
+    public void kullanici_movita_sayfasına_gider() {
+        Driver.getDriver().get(ConfigurationReader.getProperty("URL"));
+    }
+
+    @Then("kullanici ekranda verilen stringi verify eder")
+    public void kullanici_ekranda_verilen_stringi_verify_eder() {
+        ReusableMethods.waitForVisibility(movita.mainTextTurkish, 10);
+        Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
+    }
 }
