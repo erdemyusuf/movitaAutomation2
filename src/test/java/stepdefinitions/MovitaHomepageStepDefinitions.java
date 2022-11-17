@@ -782,7 +782,7 @@ public void giris_yap_tıkla() {
     }
     @Given("kullanici movita sayfasına gider")
     public void kullanici_movita_sayfasına_gider() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("URL"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("movita"));
     }
 
     @Then("kullanici ekranda verilen stringi verify eder")
@@ -790,4 +790,59 @@ public void giris_yap_tıkla() {
         ReusableMethods.waitForVisibility(movita.mainTextTurkish, 10);
         Assert.assertTrue(movita.mainTextTurkish.isDisplayed());
     }
+    //MQA-63
+    @Then("kullanici giris yap butonunu tikla")
+    public void kullanici_giris_yap_butonunu_tikla() {
+        movita.Giris_yap.click();
+    }
+    @Then("kullanici sifrenizi mi unuttunuz textlinkini görmeli")
+    public void kullanici_sifrenizi_mi_unuttunuz_textlinkini_görmeli() {
+        movita.sifrenizi_mi_unuttunuz.isDisplayed();
+    }
+    @Then("kullanici sifrenizi mi unuttunuz textlinkini tikla")
+    public void kullanici_sifrenizi_mi_unuttunuz_textlinkini_tikla() {
+        movita.sifrenizi_mi_unuttunuz.click();
+    }
+    @Then("kullanici sifre yenileme için kullanıcı adı ve telefon numarası girilecek textbox görmeli")
+    public void kullanici_sifre_yenileme_için_kullanıcı_adı_ve_telefon_numarası_girilecek_textbox_görmeli() {
+        movita.username_textbox.isDisplayed();
+        movita.telefon_textbox.isDisplayed();
+    }
+    @Then("Kullanici veya telefon numarasını hatalı gir")
+    public void kullanici_veya_telefon_numarasını_hatalı_gir() throws InterruptedException {
+        movita.telefon_textbox.sendKeys("45345435435");
+        movita.sifre_degistir_button.click();
+        Thread.sleep(2000);
+
+    }
+    @Then("kullanici Lütfen kullanıcı adınızı veya telefon numaranızı doğru girdiğinizden emin olunuz mesajini almaliyim")
+    public void kullanici_lütfen_kullanıcı_adınızı_veya_telefon_numaranızı_doğru_girdiğinizden_emin_olunuz_mesajini_almaliyim() {
+        movita.kullanici_hata_mesaji_username.isDisplayed();
+        movita.telefon_textbox.clear();
+    }
+
+    @Then("Kullanici ve telefon veya her ikisini boş birak")
+    public void kullanici_ve_telefon_veya_her_ikisini_boş_birak() throws InterruptedException {
+        movita.username_textbox.sendKeys("");
+        movita.telefon_textbox.sendKeys("");
+        movita.sifre_degistir_button.click();
+        Thread.sleep(2000);
+    }
+
+
+    @Then("kullanici Lütfen kullanıcı adınızı girdiğinizden emin olun!,Lütfen Filoya ait telefon numarasını girdiğinizden emin olun! mesajini görmeli")
+    public void kullanici_lütfen_kullanıcı_adınızı_girdiğinizden_emin_olun_lütfen_filoya_ait_telefon_numarasını_girdiğinizden_emin_olun_mesajini_görmeli() {
+        String mesaj1=movita.kullanici_hata_mesaji_username.getText();
+        String mesaj2=movita.kullanici_hata_mesaji_telefon.getText();
+        System.out.println(mesaj1);
+        System.out.println(mesaj2);
+    }
+
+    @Then("kullanici movita anasayfada oldugunu dogrular")
+    public void kullanici_movita_anasayfada_oldugunu_dogrular() {
+        String expected = "GİRİŞ YAP";
+        String actual = movita.giris.getText();
+        Assert.assertEquals(expected, actual);
+    }
+
 }

@@ -218,4 +218,20 @@ public class MovitaPage {
 
     @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[1]/a/div")
     public WebElement anasayfa;
+    //MQA-63
+    @FindBy(xpath= "//*[@id=\"header-wrap\"]/div/div/a")
+    public WebElement Giris_yap;
+    @FindBy(linkText= "Şifrenizi mi unuttunuz?")
+    public WebElement sifrenizi_mi_unuttunuz;
+    @FindBy(id="username")
+    public WebElement username_textbox;
+    @FindBy(id="telefon")
+    public WebElement telefon_textbox;
+    @FindBy(xpath= "//ul[@role='alert']//li")
+    public WebElement kullanici_hata_mesaji_username;
+    @FindBy(xpath ="/html/body/div[2]/div/div[2]/div/form/button")
+    public WebElement sifre_degistir_button;
+    @FindBy(xpath = "//li[contains(text(),'Lütfen Filoya ait telefon numarasını girdiğinizden')]")
+    public WebElement kullanici_hata_mesaji_telefon;
+
 }
