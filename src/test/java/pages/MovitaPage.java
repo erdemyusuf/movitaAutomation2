@@ -308,6 +308,51 @@ public class MovitaPage {
 
     @FindBy (xpath = "//*[text()=' Şifre Değiştir']")
     public WebElement sifreDegistir;
+//MQA-98-99
+
+    @FindBy(id ="username")
+    public WebElement username_texbox_giris;
+    @FindBy(id ="password")
+    public WebElement password_texbox_giris;
+    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/form/button")
+    public WebElement ilk_giris_yap;
+    @FindBy(xpath = "//*[@id=\"main-menu-navigation\"]/li[2]/a/span")
+    public WebElement raporlar;
+    @FindBy(css = "a[href='/arac_rapor']")
+    public WebElement arac_bazli_raporlar;
+    @FindBy(xpath = "/html/body/div[3]/div/div/section/div/div[1]/div/div")
+    public WebElement blog_1;
+    @FindBy(xpath = "/html/body/div[3]/div/div/section/div/div[1]/div/div/div/div[4]/div/a/div")
+    public WebElement rapor_al;
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_wrapper\"]/div[1]/div[1]/div/a[1]/i")
+    public WebElement Excel_;
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_wrapper\"]/div[1]/div[1]/div/a[2]/i")
+    public WebElement pdf_;
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_wrapper\"]/div[1]/div[1]/div/a[3]/i")
+    public WebElement print;
+    @FindBy(xpath = "/html/body/div[3]/div/div/section/div/div[2]/div/div[1]/div/ul/li/a/span")
+    public WebElement detayli_filtre;
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_previous\"]")
+    public WebElement onceki;
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_next\"]")
+    public WebElement sonraki;
+    @FindBy(xpath = "//*[@id=\"select2-aracSelect-container\"]")
+    public WebElement secilen_arac;
+    @FindBy(id= "tarih1")
+    public WebElement tarih_1;
+    @FindBy(id= "tarih2")
+    public WebElement tarih_2;
+    @FindBy(xpath= "//div[@id='navbar-mobile']//ul[1]//li[1]//a[1]//i[1]")
+    public WebElement cizgi;
+    @FindBy(xpath= "/html/body/div[3]/div/div/section/div/div[1]/div/div/div/div[1]/fieldset/span/span[1]/span/span[2]")
+    public WebElement arac_arrow;
+    @FindBy(xpath = "//*[@id=\"DataTables_Table_0_paginate\"]/ul")
+    public WebElement bos;
+    @FindBy(xpath = "/html/body/div[3]/div/div/section/div/div[1]/div/div")
+    public WebElement blog11;
+    @FindBy(xpath = "/html/body/div[3]/div/div/section/div/div[2]/div/div[2]/div")
+    public WebElement blog12;
+
 
     @FindBy(xpath = "//*[@href=\"/login\"]")
     public WebElement giris1;
