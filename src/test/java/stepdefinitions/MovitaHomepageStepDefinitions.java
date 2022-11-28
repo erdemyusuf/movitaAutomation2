@@ -13,14 +13,12 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.MovitaPage;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 import utilities.ReusableMethods;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -1414,4 +1412,62 @@ public class MovitaHomepageStepDefinitions extends ReusableMethods {
         movita.logo_turk.click();
         Assert.assertTrue(movita.textMobilVasitaIzleme.isEnabled());
     }
+
+    @Then("Primary menu items visibility")
+    public void primaryMenuItemsVisibility() {
+        String[] containerHeaderRow = {"ANA SAYFA", "KURUMSAL", "ÜRÜNLER", "ÇÖZÜMLER",
+                "ROTA OPTIMIZASYONU", "UYGULAMALAR", "KILAVUZ", "İLETİŞİM"};
+        conteinerItemVerify(containerHeaderRow, movita.menuContainer);
+    }
+
+    @When("Hover over “ANA SAYFA” changes color and clickable")
+    public void hoverOverANASAYFAChangesColorAndClickable() {
+        waitForClickablility(movita.anasayfa, 10);
+        elementColorVerify(movita.anasayfa);
+    }
+
+    @And("Click “ANA SAYFA\"")
+    public void clickANASAYFA() {
+        movita.anasayfa.click();
+        Assert.assertTrue(movita.textMobilVasitaIzleme.isEnabled());
+    }
+
+    @When("Hover over “KURUMSAL” changes color")
+    public void hoverOverKURUMSALChangesColor() {
+        elementColorVerify(movita.kurumsalMenu);
+    }
+
+
+    @Then("See list items under “KURUMSAL” menu item")
+    public void seeListItemsUnderKURUMSALMenuItem() {
+        String[] containerKURUMSAL = {"HAKKIMIZDA", "BELGELERIMIZ", "BAYILIK BAŞVURUSU", "DEMO BAŞVRUSU",
+                "ÇEREZ POLITIKASI", "KVKK"};
+        conteinerItemVerify(movita.kurumsalMenu, containerKURUMSAL, movita.listKurumsalSubMenu);
+    }
+
+
+    @When("Hover over “ÜRÜNLER” changes color")
+    public void hoverOverÜRÜNLERChangesColor() {
+        elementColorVerify(movita.urunler);
+    }
+
+    @Then("See list items under “ÜRÜNLER” menu item")
+    public void seeListItemsUnderÜRÜNLERMenuItem() {
+        String[] containerKURUMSAL = {"MNVR", "MNVR PRO", "MNVR AI", "ARAÇ TAKIP CIHAZI", "CAM TRACKER", "AKILLI DIREK SISTEMI"};
+        conteinerItemVerify(movita.urunler, containerKURUMSAL, movita.listUrunlerSubMenu);
+    }
+
+    @When("Hover over “ÇÖZÜMLER” changes color")
+    public void hoverOverÇÖZÜMLERChangesColor() {
+        elementColorVerify(movita.menuCozumler);
+    }
+
+    @Then("See list items under “ÇÖZÜMLER” menu item")
+    public void seeListItemsUnderÇÖZÜMLERMenuItem() {
+        String[] containerCOZUMLER = {"TAKSI VE ÖZEL ARAÇLAR", "MINIBÜSLER VE MIDIBÜSLER", "ŞEHIRLER ARASI OTOBÜSLER", "ZIRHLI TAŞIMA ARAÇLARI", "OKUL SERVISLERI",
+                "GÜVENLIK KUVVETLERI ARAÇLARI", "YÜK VE EŞYA TAŞIYAN ARAÇLAR", "BELEDIYE VE HALK OTOBÜSLERI"};
+        conteinerItemVerify(movita.menuCozumler, containerCOZUMLER, movita.listCozumlerSubMenu);
+    }
+
+
 }
