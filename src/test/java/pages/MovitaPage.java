@@ -31,7 +31,7 @@ public class MovitaPage {
     @FindBy(xpath = "//a[@class=\"dropdown-item\"]")
     public WebElement logo_eng;
 
-    @FindBy(xpath = "//a[@src=\"/app-assets/images/lang/turkFlag.png\"]")
+    @FindBy(xpath = "//*[@src=\"/app-assets/images/lang/turkFlag.png\"]")
     public WebElement logo_turk;
 
     @FindBy(xpath = "//div[@id=\"layer-126085703\"]")
@@ -494,8 +494,7 @@ public class MovitaPage {
     @FindBy(tagName = "h1")
     public WebElement nesne_takip_sistemi_text;
 
-    @FindBy(xpath ="//*[@id=\"main-menu-navigation\"]/li[2]")
-    public WebElement raporlar;
+
 
     @FindBy(css = "#username")
     public WebElement username1;
@@ -517,6 +516,11 @@ public class MovitaPage {
 
     @FindBy(css = "#layer-252531527 > a:nth-child(1) > span")
     public WebElement solutions;
+
+    @FindBy(xpath = "//*[contains(text(),\"Mobil Vasıta İzleme Takip Sistemi\")]")
+    public WebElement textMobilVasitaIzleme;
+    @FindBy(xpath = "//*[contains(text(),\"Mobile Vehicle\")]")
+    public WebElement textMobileVehicleTraking;
 
 
 
