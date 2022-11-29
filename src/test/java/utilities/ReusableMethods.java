@@ -1,8 +1,10 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.Color;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
@@ -15,6 +17,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.function.Function;
 
 public class ReusableMethods {
@@ -176,4 +179,34 @@ public class ReusableMethods {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator)).sendKeys(text);
     }
+
+    public void elementColorVerify(WebElement element) {
+        String color_before = element.getCssValue("color");
+        String color_b_hex = Color.fromString(color_before).asHex();
+        ReusableMethods.hover(element);
+        String color_after = element.getCssValue("color");
+        String color_a_hex = Color.fromString(color_after).asHex();
+        Assert.assertFalse(Objects.equals(color_a_hex, color_b_hex));
+    }
+
+    public void conteinerItemVerify(String[] containerText,List<WebElement> elements){
+        for (WebElement list : elements) {
+            Assert.assertTrue(list.isDisplayed());
+            for (int st = 0; st < containerText.length; st++) {
+                Assert.assertTrue(list.getText().contains(containerText[st]));
+            }
+        }
+    }
+    public void conteinerItemVerify(WebElement element,String[] containerText,List<WebElement> elements){
+        hover(element);
+        for (WebElement list : elements) {
+            Assert.assertTrue(list.isDisplayed());
+            //System.out.println("list.getText() = " + list.getText());
+            for (int st = 0; st < containerText.length; st++) {
+                waitForVisibility(list,10);
+                Assert.assertTrue(list.getText().contains(containerText[st]));
+            }
+        }
+    }
+
 }

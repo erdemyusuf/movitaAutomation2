@@ -5,6 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.util.List;
+
 
 public class MovitaPage {
 
@@ -522,6 +524,16 @@ public class MovitaPage {
     @FindBy(xpath = "//*[contains(text(),\"Mobile Vehicle\")]")
     public WebElement textMobileVehicleTraking;
 
+    @FindBy(xpath = "//*[@class=\"menu-container\"]")
+    public List<WebElement> menuContainer;
+    @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[2]/ul")
+    public List<WebElement> listKurumsalSubMenu;
+    @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[3]/ul")
+    public List<WebElement> listUrunlerSubMenu;
+    @FindBy(xpath = "//div[text()=\"Çözümler\"]")
+    public WebElement menuCozumler;
+    @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[4]/ul")
+    public List<WebElement> listCozumlerSubMenu;
 
 
 
