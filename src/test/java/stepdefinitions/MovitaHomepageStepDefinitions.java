@@ -1470,4 +1470,34 @@ public class MovitaHomepageStepDefinitions extends ReusableMethods {
     }
 
 
+    @When("Hover over “KURUMSAL” and verify list")
+    public void hoverOverKURUMSALAndVerifyList() {
+        seeListItemsUnderKURUMSALMenuItem();
+        ReusableMethods.hover(movita.kurumsalMenu);
+
+    }
+
+    @And("Hover over {string} changes color and verify {string} text after click")
+    public void hoverOverChangesColorAndVerifyTextAfterClick(String containerText, String pageText) {
+        WebElement subtext = driver.findElement(By.xpath("//div[contains(text(),\'"+containerText+"\')]"));
+        elementColorVerify(subtext);
+        subtext.click();
+        WebElement ss=driver.findElement(By.xpath("//*[contains(.,\'"+pageText+"\')]"));
+        System.out.println(ss.getText());
+        Assert.assertTrue(ss.getText().contains(pageText));
+        driver.navigate().back();
+    }
+
+
+    @When("Hover over “ÜRÜNLER“ and verfy list")
+    public void hoverOverÜRÜNLERAndVerfyList() {
+        seeListItemsUnderÜRÜNLERMenuItem();
+        ReusableMethods.hover(movita.menuUrunler);
+    }
+
+    @When("Hover over “ÇÖZÜMLER“ and verfy list")
+    public void hoverOverÇÖZÜMLERAndVerfyList() {
+        seeListItemsUnderÇÖZÜMLERMenuItem();
+        ReusableMethods.hover(movita.menuCozumler);
+    }
 }
