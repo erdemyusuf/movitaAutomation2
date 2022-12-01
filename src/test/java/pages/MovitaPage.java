@@ -532,6 +532,8 @@ public class MovitaPage {
     public List<WebElement> listUrunlerSubMenu;
     @FindBy(xpath = "//div[text()=\"Çözümler\"]")
     public WebElement menuCozumler;
+    @FindBy(xpath = "//div[text()=\"Ürünler\"]")
+    public WebElement menuUrunler;
     @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[4]/ul")
     public List<WebElement> listCozumlerSubMenu;
 

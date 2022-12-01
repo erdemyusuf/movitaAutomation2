@@ -186,6 +186,7 @@ public class ReusableMethods {
         ReusableMethods.hover(element);
         String color_after = element.getCssValue("color");
         String color_a_hex = Color.fromString(color_after).asHex();
+        System.out.println(color_b_hex+color_a_hex);
         Assert.assertFalse(Objects.equals(color_a_hex, color_b_hex));
     }
 
