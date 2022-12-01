@@ -537,7 +537,54 @@ public class MovitaPage {
     @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[4]/ul")
     public List<WebElement> listCozumlerSubMenu;
 
+//// detaylı filtreleme sayfası
 
+    @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
+    public WebElement loginButton;
 
+    @FindBy (css = "select.yearselect")
+    public WebElement selectYear1;
+    @FindBy (css = "select.monthselect")
+    public WebElement selectMonth1;
+    @FindBy (xpath = ".//td[text()=\"1\"]")
+    public WebElement firstDayOfTheMonth;
+
+    @FindBy (xpath = ".//*[text()=\"Detaylı Filtre\"]")
+    public WebElement detayliFiltre;
+
+    @FindBy (css = "label[for=\"tarih_filter\"]")
+    public WebElement tarihfilter;
+
+    @FindBy (css = "label[for=\"is_baslama_filter\"]")
+    public WebElement iseBaslamaFilter;
+
+    @FindBy (css = "label[for=\"is_bitis_filter\"]")
+    public WebElement isBitisFilter;
+
+    @FindBy (css = "input#tarih_filter")
+    public WebElement inputTarihFilter;
+    @FindBy (css = "input#is_baslama_filter")
+    public WebElement inputIseBaslamaFilter;
+    @FindBy (css = "input#is_bitis_filter")
+    public WebElement inputIsBitisFilter;
+
+    @FindBy (xpath = ".//td[contains(text(),\"2022\")]/parent::tr")
+    public List<WebElement> resultDate2022;
+
+    @FindBy (xpath = "//td[contains(text(),\"2021-11\")]/parent::tr")
+    public List<WebElement> resultDate2021_11;
+
+    @FindBy (xpath = "//td[contains(text(),\"2021-11-05\")]/parent::tr")
+    public List<WebElement> resultDate2021_11_05;
+    @FindBy(xpath = "//input[@id=\"tarih1\"]")
+    public WebElement baslangicTarihi;
+
+    @FindBy(xpath = ".//*[text()=\"Raporlar\"]")
+    public WebElement menuRaporlar;
+
+    @FindBy(xpath = ".//*[text()=\"Araç Bazlı Rapor\"]")
+    public WebElement menuAracBazliRapor;
+    @FindBy(css = "div.btn")
+    public WebElement menuRaporAlButton;
 }
 
