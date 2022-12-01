@@ -137,6 +137,12 @@ public void userNavigatesToLoginPage() {
 
     }
 
+    @And("click on Araç Sec")
+    public void clickOnAraçSec() {
+        Select arac=new Select(movita.aracSec);
+        arac.selectByIndex(0);
+
+    }
     @Then("clicks on Baslangic Tarihi")
     public void clicksOnBaslangicTarihi() {
         waitForVisibility(movita.baslangicTarihi, 5).click();
@@ -245,7 +251,7 @@ public void userNavigatesToLoginPage() {
         movita.inputIseBaslamaFilter.clear();
         movita.inputIseBaslamaFilter.sendKeys(arg0);
 
-        // TODO: RETEST after fix:  MAT-145 Bug report created
+        // TODO: RETEST after fix:  MAT-103 Bug report created
         assertEquals(result.size(), movita.resultDate2021_11.size());
 
     }
@@ -260,7 +266,7 @@ public void userNavigatesToLoginPage() {
         movita.inputIsBitisFilter.clear();
         movita.inputIsBitisFilter.sendKeys(arg0);
 
-        // TODO: RETEST after fix:  MAT-148 Bug report created
+        // TODO: RETEST after fix:  MAT-104 Bug report created
         assertEquals(result.size(), movita.resultDate2021_11.size());
     }
 

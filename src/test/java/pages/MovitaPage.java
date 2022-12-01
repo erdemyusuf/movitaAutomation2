@@ -537,11 +537,12 @@ public class MovitaPage {
     @FindBy(xpath = "//*[@id=\"header-wrap\"]/div/div/nav/ul/li[4]/ul")
     public List<WebElement> listCozumlerSubMenu;
 
-//// detaylı filtreleme sayfası
+//// detaylı filtreleme sayfası """""ENGİN AKGÜL"""""""
 
     @FindBy(xpath = ".//*[text()=\" Giriş Yap\"]")
     public WebElement loginButton;
-
+    @FindBy(xpath = "//*[@id=\"aracSelect\"]")
+    public WebElement aracSec;
     @FindBy (css = "select.yearselect")
     public WebElement selectYear1;
     @FindBy (css = "select.monthselect")

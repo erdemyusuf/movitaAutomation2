@@ -5,6 +5,7 @@ Feature:  Deatiled Filter
     When user logins the page
     And click on Raporlar
     And click on Araç Bazlı Rapor
+    And click on Araç Sec
     Then clicks on Baslangic Tarihi
     And choose 2021-01-01 from dropdown menu
     Then click  on Rapor al
