@@ -30,7 +30,6 @@ Feature:  Deatiled Filter
       | 2021-11-05 | 1      |
 
   Scenario Outline: Date filter with ise baslama
-    Given user sends input as "2021-11"
     Then user verifies filtered result with date and ise baslama "<ise baslama>"
     Then user verifies filtered result with date and is bitis "<is bitis>"
 
