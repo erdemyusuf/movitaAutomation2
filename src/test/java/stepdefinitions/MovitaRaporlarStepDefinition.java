@@ -271,4 +271,18 @@ public void userNavigatesToLoginPage() {
     }
 
 
+    @When("click Yakıt Entegrasyonu Raporu")
+    public void clickYakıtEntegrasyonuRaporu() {
+        movita.yakitEntegRaporu.click();
+    }
+
+    @Then("click  on Yakıt Entegrasyon Raporu Al")
+    public void clickOnYakıtEntegrasyonRaporuAl() {
+        movita.yakitRapuruAl.click();
+    }
+
+    @And("tarih gir")
+    public void tarihGir() {
+        movita.tarih1.sendKeys("2021-01-01");
+    }
 }

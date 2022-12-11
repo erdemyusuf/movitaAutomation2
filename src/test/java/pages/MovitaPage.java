@@ -587,5 +587,17 @@ public class MovitaPage {
     public WebElement menuAracBazliRapor;
     @FindBy(css = "div.btn")
     public WebElement menuRaporAlButton;
+
+    @FindBy(xpath = ".//*[text()=\"Yakıt Entegrasyon Raporu\"]")
+    public WebElement yakitEntegRaporu;
+
+    @FindBy(xpath = "/html/body/div[3]/div/div/section/div/div[1]/div/div/div/div[3]/div/a/div/text()[2]")
+    public WebElement yakitRapuruAl;
+
+    @FindBy(xpath = "//*[@id=\"tarih1\"]")
+    public WebElement tarih1;
+
+
+
 }
 
