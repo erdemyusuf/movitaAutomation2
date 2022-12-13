@@ -278,11 +278,13 @@ public void userNavigatesToLoginPage() {
 
     @Then("click  on Yakıt Entegrasyon Raporu Al")
     public void clickOnYakıtEntegrasyonRaporuAl() {
-        movita.yakitRapuruAl.click();
+        waitForVisibility(movita.yakitRapuruAl,5).click();
     }
 
     @And("tarih gir")
     public void tarihGir() {
-        movita.tarih1.sendKeys("2021-01-01");
+        movita.tarih1.clear();
+        movita.tarih1.sendKeys("2021-01-01",Keys.TAB,Keys.TAB);
+
     }
 }
