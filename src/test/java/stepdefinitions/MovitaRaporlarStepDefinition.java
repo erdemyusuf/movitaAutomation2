@@ -270,6 +270,8 @@ public void userNavigatesToLoginPage() {
         assertEquals(result.size(), movita.resultDate2021_11.size());
     }
 
+/////////////////////// Engin AKGÜL   Raporlar Smoke Test Bölümü//////////////////////////////////////////////////////////////
+
 
     @When("click Yakıt Entegrasyonu Raporu")
     public void clickYakıtEntegrasyonuRaporu() {
@@ -278,7 +280,7 @@ public void userNavigatesToLoginPage() {
 
     @Then("click  on Yakıt Entegrasyon Raporu Al")
     public void clickOnYakıtEntegrasyonRaporuAl() {
-        waitForVisibility(movita.yakitRapuruAl,5).click();
+        waitForVisibility(movita.menuRaporAlButton,5).click();
     }
 
     @And("tarih gir")
@@ -287,4 +289,52 @@ public void userNavigatesToLoginPage() {
         movita.tarih1.sendKeys("2021-01-01",Keys.TAB,Keys.TAB);
 
     }
+
+    @When("click günlük seyahat raporu")
+    public void clickGünlükSeyahatRaporu() {
+        movita.günlükSeyahatRaporu.click();
+    }
+
+    @When("click aktivite detay raporu")
+    public void clickAktiviteDetayRaporu() {
+        movita.aktiviteDetayRaporu.click();
+    }
+
+    @And("arac sec")
+    public void aracSec() {
+        Select arac=new Select(movita.aracSec);
+        arac.selectByIndex(5);
+
+    }
+
+    @When("click arac Karne")
+    public void clickAracKarne() {
+        movita.aracKarne.click();
+    }
+
+    @When("click filo bazlı raporu")
+    public void clickFiloBazlıRaporu() {
+        movita.filoBazlıRapor.click();
+    }
+
+    @When("click grup bazlı raporu")
+    public void clickGrupBazlıRaporu() {
+        movita.grupBazlıRapor.click();
+    }
+
+    @When("click alarm log raporu")
+    public void clickAlarmLogRaporu() {
+        movita.alarmLogRapor.click();
+    }
+
+    @Then("click  sorgula")
+    public void clickSorgula() {
+        movita.alarmSorgulaRapor.click();
+    }
+
+    @When("click sofor log raporu")
+    public void clickSoforLogRaporu() {
+        movita.soforLogRapor.click();
+    }
+    //////          Engin AKGÜL Raporlar Smoke Test sonu//////////////
 }

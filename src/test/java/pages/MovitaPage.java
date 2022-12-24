@@ -577,6 +577,8 @@ public class MovitaPage {
 
     @FindBy (xpath = "//td[contains(text(),\"2021-11-05\")]/parent::tr")
     public List<WebElement> resultDate2021_11_05;
+
+    /////////  engin akgül raporlar smoke test
     @FindBy(xpath = "//input[@id=\"tarih1\"]")
     public WebElement baslangicTarihi;
 
@@ -596,6 +598,28 @@ public class MovitaPage {
 
     @FindBy(xpath = "//*[@id=\"tarih1\"]")
     public WebElement tarih1;
+
+    @FindBy(xpath = "//*[text()=\"Günlük Seyahat Raporu\"]")
+    public WebElement günlükSeyahatRaporu;
+ @FindBy(xpath = "//*[text()=\"Aktivite Detay Raporu\"]")
+    public WebElement aktiviteDetayRaporu;
+@FindBy(xpath = "//*[text()=\"Araç Karne\"]")
+    public WebElement aracKarne;
+    @FindBy(xpath = "//*[text()=\"Filo Bazlı Rapor\"]")
+    public WebElement filoBazlıRapor;
+    @FindBy(xpath = "//*[text()=\"Grup Bazlı Rapor\"]")
+    public WebElement grupBazlıRapor;
+    @FindBy(xpath = "//*[text()=\"Alarm Log Raporu\"]")
+    public WebElement alarmLogRapor;
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement alarmSorgulaRapor;
+
+
+    @FindBy(xpath = "//*[text()=\"Şoför Log Raporu\"]")
+    public WebElement soforLogRapor;
+ @FindBy(xpath = "//*[text()=\"Sensör Log Raporu\"]")
+    public WebElement sensorLogRapor;
+    //////          Engin AKGÜL Raporlar Smoke Test sonu//////////////
 
 
 
