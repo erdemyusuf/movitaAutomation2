@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: MQA-83 Login Page Smoke Test
 
   Scenario: TC_MQA-100 Login Page

@@ -1,4 +1,4 @@
-@mqa_6_1
+@SmokeTest
 Feature: US_Mqa_6
 
 

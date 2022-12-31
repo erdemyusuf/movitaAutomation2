@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: US_Mqa_51
   Scenario:Login page
 

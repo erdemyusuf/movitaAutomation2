@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Movita Test
 
   Scenario: MQA-98-99 Arac Bazli Raporlar

@@ -1,3 +1,4 @@
+@SmokeTest
 Feature:[MQA-68] Kullanici Hesabi Sayfasi
 
   Scenario: TC_MQA-75 Basarili Login Sayfa Gorunumu

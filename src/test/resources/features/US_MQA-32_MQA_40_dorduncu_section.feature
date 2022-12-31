@@ -1,4 +1,4 @@
-@parametre
+@SmokeTest
 Feature: Movita Test
 
   Scenario: MQA-32 Movita Anasayfa Dördüncü Section

@@ -1,4 +1,4 @@
-@parametre
+@SmokeTest
 Feature: Movita Test
 
   Scenario: MQA-63 Sifrenizi mi unuttunuz linkinin islevselligi

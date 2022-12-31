@@ -337,4 +337,74 @@ public void userNavigatesToLoginPage() {
         movita.soforLogRapor.click();
     }
     //////          Engin AKGÜL Raporlar Smoke Test sonu//////////////
+
+
+   /// MQA 92 SMOKE TEST PERSONEL İŞLEMLERİ -- YUSUF
+
+    @Then("kullanici personel islemlerine tiklar")
+    public void userClickToPersonelIslemleri() {
+        waitForVisibility(movita.personelIslemleri,2).click();
+    }
+
+    @Then("kullanici personele tiklar")
+    public void userClickToPersonel() {
+        waitForVisibility(movita.personel,2).click();
+    }
+
+    @Then("personel listesi sayfasi olmali")
+    public void userShouldBeOnPersonelListesiPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/personel-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("Is atama tiklanir")
+    public void userClickToIsAtama() {
+        waitForVisibility(movita.isAtama,2).click();
+    }
+
+    @Then("Is atama sayfası olmali")
+    public void userShouldBeOnIsAtamaPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/is-atama-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("Servis islemleri tiklanir")
+    public void userClickToServisIslemleri() {
+        waitForVisibility(movita.servisIslemleri,2).click();
+    }
+
+    @Then("Servis Islemleri sayfasi olmali")
+    public void userShouldBeOnServisIslemleriPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/servis-islemleri",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("Birim Listesi tiklanir")
+    public void userClickToBirimListesi() {
+        waitForVisibility(movita.birimListesi,2).click();
+    }
+
+    @Then("Birim Listesi sayfasi olmali")
+    public void userShouldBeOnBirimListesiPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/birim-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("Personel Anket tiklanir")
+    public void userClickToPersonelAnket() {
+        waitForVisibility(movita.anket,2).click();
+    }
+
+    @Then("Personel Anket sayfasi olmali")
+    public void userShouldBeOnPersonelAnketPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/personel-anket-listesi",Driver.getDriver().getCurrentUrl());
+    }
+
+    @Then("Personel Sikayet Talep tiklanir")
+    public void userClickToPersonelSikayetTalep() {
+        waitForVisibility(movita.sikayetTalep,2).click();
+    }
+
+    @Then("Personel Sikayet Talep sayfasi olmali")
+    public void userShouldBeOnPersonelSikayetTalepPage() {
+        Assert.assertEquals("http://movita.com.tr:9045/personel-talep-listesi",Driver.getDriver().getCurrentUrl());
+    }
+    //---------------------------------------MQA 92 SON --------------------------------------------------------------------------------------
+
 }

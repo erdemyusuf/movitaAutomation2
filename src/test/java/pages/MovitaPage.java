@@ -621,6 +621,25 @@ public class MovitaPage {
     public WebElement sensorLogRapor;
     //////          Engin AKGÜL Raporlar Smoke Test sonu//////////////
 
+    /// MQA 92 SMOKE TEST PERSONEL İŞLEMLERİ -- YUSUF
+    @FindBy (xpath ="//a[normalize-space()='Personel']" )
+    public WebElement personel;
+
+     @FindBy (xpath ="//a[contains(text(),'İş Atama')]" )
+    public WebElement isAtama;
+
+      @FindBy (css ="li[id='servis_islemleri'] a[class='menu-item']" )
+    public WebElement servisIslemleri;
+
+    @FindBy (xpath ="//a[@class='menu-item'][normalize-space()='Birim Listesi']" )
+    public WebElement birimListesi;
+
+     @FindBy (xpath ="//a[normalize-space()='Personel Anket']" )
+    public WebElement anket;
+
+    @FindBy (xpath ="//a[contains(text(),'Personel Şikayet-Talep-Öneri bildirim')]" )
+    public WebElement sikayetTalep;
+
 
 
 }

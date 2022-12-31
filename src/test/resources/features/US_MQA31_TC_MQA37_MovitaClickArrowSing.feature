@@ -1,4 +1,4 @@
-@mqa_31
+@SmokeTest
 Feature: US_Mqa_31
 
   Scenario:third section

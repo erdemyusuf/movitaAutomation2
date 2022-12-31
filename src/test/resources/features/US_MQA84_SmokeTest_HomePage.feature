@@ -1,4 +1,4 @@
-@SmokeTestHomePage
+@SmokeTest
   Feature: Sprint 6
     Scenario: Smoke Test Home Page
       Given user navigates to "movita" page

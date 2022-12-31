@@ -1,4 +1,4 @@
-@parametre
+@SmokeTest
 Feature: Movita Test
 
   Scenario: MQA-33 Movita Anasayfa Besinci Section

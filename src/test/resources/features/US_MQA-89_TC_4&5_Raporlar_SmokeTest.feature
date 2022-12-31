@@ -1,3 +1,4 @@
+@SmokeTest
 Feature:  Smoke Test Raporlar
 
   Scenario: Raperlar Filter
