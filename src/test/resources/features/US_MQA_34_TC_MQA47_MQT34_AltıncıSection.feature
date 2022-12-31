@@ -1,4 +1,4 @@
-
+@SmokeTest
 Feature: US_Mqa_34
 
   Scenario:sixth section

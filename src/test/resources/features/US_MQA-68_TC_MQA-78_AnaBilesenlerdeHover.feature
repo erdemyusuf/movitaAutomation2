@@ -1,3 +1,4 @@
+@SmokeTest
 Feature:[MQA-68] Kullanici Hesabi Sayfasi
 
   Scenario: TC_MQA-78 Ana bilesenlerde hover

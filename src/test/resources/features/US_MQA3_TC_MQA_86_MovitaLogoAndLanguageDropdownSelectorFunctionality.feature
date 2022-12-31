@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Movita logo and language dropdown selector functionality.
 
   Scenario: Click movita logo and change language.

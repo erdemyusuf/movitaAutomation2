@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: US_MQA-49 LOgin sayfasi gorunumu
 
   Scenario: TC_MQA-60 Anasayfaya donebilme

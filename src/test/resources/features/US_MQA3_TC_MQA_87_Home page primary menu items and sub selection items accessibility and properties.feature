@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Home page primary menu items and sub selection items accessibility and properties.
 
   Scenario: Header menu items accessibility and properties.

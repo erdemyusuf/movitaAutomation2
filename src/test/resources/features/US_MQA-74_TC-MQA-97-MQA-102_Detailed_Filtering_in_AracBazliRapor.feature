@@ -1,3 +1,4 @@
+@SmokeTest
 Feature:  Deatiled Filter
 
   Background: Deatiled Filter

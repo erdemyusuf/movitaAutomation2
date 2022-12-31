@@ -1,3 +1,4 @@
+@SmokeTest
 Feature: Sub selections
 
   Scenario: TC_MQA94-"KURUMSAL" sub selections and verify.

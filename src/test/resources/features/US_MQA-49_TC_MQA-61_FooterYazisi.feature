@@ -1,3 +1,4 @@
+@SmokeTest
 Feature:US_MQA-49 Login sayfasi gorunumu
 
   Scenario:TC_MQA-61 footer kismi yazisi
